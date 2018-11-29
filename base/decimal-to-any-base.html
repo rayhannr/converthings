@@ -1,0 +1,231 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Decimal to Any Base</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Ubuntu">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <main>
+        <!-- start of header -->
+        <header id="basic">
+            <!-- the title -->
+            <span id="back">converThings</span>
+            <!-- sidebar -->
+            <div id="mySidenav" class="sidenav">
+                <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+                <a href="../index.html" class="menus">Home</a>
+                <a id="item" class="menus">Features</a>
+                <div id="submenu">
+                    <a href="../stringtobinary/string-to-binary.html">String to Binary</a>
+                    <a href="../binarytostring/binary-to-string.html">Binary to String</a>
+                    <a href="decimal-to-any-base.html">Decimal to Any Base</a>
+                    <a href="../binarytooctal/binary-to-octal.html">Binary to Octal</a>
+                    <a href="../binarytodecimal/binary-to-decimal.html">Binary to Decimal</a>
+                    <a href="../binarytohexa/binary-to-hexadecimal.html">Binary to Hex</a>
+                    <a href="../octaltobinary/octal-to-binary.html">Octal to Binary</a>
+                    <a href="../octaltodecimal/octal-to-decimal.html">Octal to Decimal</a>
+                    <a href="../octaltohex/octal-to-hexadecimal.html">Octal to Hex</a>
+                    <a href="../hexatobinary/hexadecimal-to-binary.html">Hex to Binary</a>
+                    <a href="../hextooctal/hex-to-octal.html">Hex to Octal</a>
+                    <a href="../hexatodecimal/hexa-to-decimal.html">Hex to Decimal</a>
+                    <a href="../rgbtohex/rgb-to-hex.html">RGB to Hex</a>
+                    <a href="../caesarcipher/caesar-cipher.html">Caesar Cipher</a>
+                </div>
+                <a href="#about" class="menus" onclick="closeNav()">About</a>
+            </div>
+            <div id="menus" class="dropdown">
+                <a href="../index.html" class="menu">Home</a>
+                <a id="item" class="menu dropdown-toggle" data-toggle="dropdown">Features <span class="caret"></span></a>
+                <ul id="subs" class="dropdown-menu">
+                    <li><a href="string-to-binary.html">String to Binary</a></li>
+                    <li><a href="../binarytostring/binary-to-string.html">Binary to String</a></li>
+                    <li><a href="../base/decimal-to-any-base.html">Decimal to Any Base</a></li>
+                    <li><a href="../binarytooctal/binary-to-octal.html">Binary to Octal</a></li>
+                    <li><a href="../binarytodecimal/binary-to-decimal.html">Binary to Decimal</a></li>
+                    <li><a href="../binarytohexa/binary-to-hexadecimal.html">Binary to Hex</a></li>
+                    <li><a href="../octaltobinary/octal-to-binary.html">Octal to Binary</a></li>
+                    <li><a href="../octaltodecimal/octal-to-decimal.html">Octal to Decimal</a></li>
+                    <li><a href="../octaltohex/octal-to-hexadecimal.html">Octal to Hex</a></li>
+                    <li><a href="../hexatobinary/hexadecimal-to-binary.html">Hex to Binary</a></li>
+                    <li><a href="../hextooctal/hex-to-octal.html">Hex to Octal</a></li>
+                    <li><a href="../hexatodecimal/hexa-to-decimal.html">Hex to Decimal</a></li>
+                    <li><a href="../rgbtohex/rgb-to-hex.html">RGB to Hex</a></li>
+                    <li><a href="../caesarcipher/caesar-cipher.html">Caesar Cipher</a></li>
+                </ul>
+                <a href="#about" class="menu">About</a>
+            </div>
+            <!-- end of sidebar -->
+            <!-- button to open sidebar -->
+            <span onclick="openNav()" id="button"><i class="fa fa-bars"></i></span>
+        </header>
+        <!-- end of header -->
+        <section id="title">
+            <h4>Decimal to Any Base</h4>
+            <a href="#desc"><i class="fa fa-question-circle-o"></i></a>
+        </section>
+        <!-- input output section -->
+        <form>
+            <div class="form-group">
+                <label for="dec">Decimal</label>
+                <span><i class="fa fa-trash" onclick="deleteDec()"></i></span>
+                <textarea id="dec" class="form-control" type="number" rows="3" placeholder="Input any decimal number" onkeyup="convert(); contain();"></textarea>
+                <span id="error1">The input must contain integers only.</span>
+            </div>
+            <div class="form-group">
+                <label for="base">Base</label>
+                <span><i class="fa fa-trash" id="bom" onclick="deleteBase()"></i></span>
+                <input id="base" class="form-control" type="number" placeholder="Input any base from 2-36" onkeyup="convert()">
+                <span id="error2">The base should be within the range of 2-36.</span>
+            </div>
+            <div class="form-group">
+                <label for="output">Output</label>
+                <textarea id="output" class="form-control" type="text" rows="3" disabled="true"></textarea>
+            </div>
+        </form>
+        <!-- end of i/o section -->
+        <!-- desc of program -->
+        <hr>
+        <section id="desc">
+            <h4>Description</h4>
+            <p>In mathematics, a base is the number of different digits or combinations of digits and letters that
+                system of counting uses to represent numbers. For example, the most common base used today is the decimal system.
+                Because "dec" means 10, it uses the 10 digits from 0 to 9.<br>A decimal number has base 10, a binary has base 2, an octal has base 8, etc.
+            </p>
+            <p>
+                Given a non-negative integer and a base as input, we convert the given decimal into the corresponding base.
+            </p>
+            <p><b>Some Examples:<br>
+                Input</b>: 25 7<br>
+            <b>Output</b>: 34<br><br>
+
+            <b>Input</b>: 368 4 <br>
+            <b>Output</b>: 11300<br><br>
+
+            <b>Input</b>: 3229 16<br>
+            <b>Output</b>: C9D
+            </p>
+        </section>
+        <!-- end of desc -->
+        <!-- footer -->
+        <section id="about">
+            <h4>Check our social media to know more about us.</h4>
+            <nav class="sosial">
+                <a id="gog" class="btn" href="https://plus.google.com/111388155287137108474" target="_blank">
+                    <i class="fa fa-google-plus"></i>
+                </a>
+                <a id="fac" class="btn" href="https://www.facebook.com/naufalramadhannn" target="_blank">
+                    <i class="fa fa-facebook"></i>
+                </a>
+                <a id="lin" class="btn" href="http://www.linkedin.com/in/rayhantu" target="_blank">
+                    <i class="fa fa-linkedin"></i>
+                </a>
+                <a id="git" class="btn" href="http://github.com/rayhannr" target="_blank">
+                    <i class="fa fa-github"></i>
+                </a>
+            </nav>
+            <footer>&copy; 2018 converThings</footer>
+        </section>
+        <!-- end of footer -->
+    </main>
+
+    <script>
+        var dec = document.getElementById("dec");
+        var error1 = document.getElementById("error1");
+        var output = document.getElementById("output");
+        var error2 = document.getElementById("error2");
+        var base = document.getElementById("base");
+
+        function isEmpty(input){
+            return input=="";
+        }
+
+        function hasNonNumber(input){
+            return /[^0-9]/.test(input);
+        }
+        function contain(){
+            if(hasNonNumber(dec.value)){
+                output.value="Invalid input";
+                dec.style.borderColor="red";
+                dec.style.borderWidth="2px";
+                error1.style.display="inline";
+            }
+            else{
+                dec.style.borderColor="#cccccc";
+                error1.style.display="none";
+                dec.style.borderWidth="1px";
+            }
+        }
+        function deleteDec(){
+            dec.value="";
+            error1.style.display="none";
+            dec.style.borderColor="#cccccc";
+            output.value="";
+            dec.style.borderWidth="1px";
+            dec.focus();
+        }
+        function deleteBase(){
+            base.value="";
+            error2.style.display="none";
+            base.style.borderColor="#cccccc";
+            output.value="";
+            base.style.borderWidth="1px";
+            base.focus();
+        }
+        function convert(){
+            var digit = [0,1,2,3,4,5,6,7,8,9,'A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+            var result = "";
+            var deco = dec.value;
+            var baseo = base.value
+            
+            if(baseo<37 && baseo>1){
+                while(deco>0){
+                    result=digit[deco%baseo]+result;
+                    deco=Math.floor(deco/baseo);
+                }
+                output.value=result;
+                error2.style.display="none";
+                base.style.borderColor="#cccccc";
+                base.style.borderWidth="1px";
+            }
+            else if(isEmpty(base.value)){
+                output.value="";
+                error2.style.display="none";
+                base.style.borderColor="#cccccc";
+                base.style.borderWidth="1px";
+            }
+            else{
+                output.value="Invalid input";
+                error2.style.display="inline";
+                base.style.borderColor="red";
+                base.style.borderWidth="2px";
+            }
+        }
+        function openNav() {
+            const vw = window.matchMedia( "(min-width: 701px)" );
+            if(vw.matches)
+                document.getElementById("mySidenav").style.width = "40%";
+            else
+            document.getElementById("mySidenav").style.width = "60%";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+        }
+        // function to make dropdown list in sidebar menu
+        $(function(){
+            $("#item").click(function(){
+                $("#submenu").slideToggle(500);
+            });
+        });
+    </script>
+</body>
+</html>

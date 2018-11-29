@@ -1,0 +1,330 @@
+html, body, main{
+    width: 100vw;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Ubuntu;
+    position: absolute;
+    overflow-x: hidden;
+}
+main{
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+/* header */
+#basic{
+    text-align: center;
+    background-color: #4baeda;
+    color: white;
+    box-shadow: -1px 1px 1px 0 rgba(178, 187, 190, 1);
+    min-height: 40px;
+    z-index: 2;
+}
+/* title inside header */
+#back{
+    position: relative;
+    top: 50%;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 22px;
+    font-weight: 400;
+    display: inline-block;
+}
+/* hamburger button */
+#button{
+    position: absolute;
+    right: 0;
+    padding: 17px;
+    cursor: pointer;
+    font-size: 20px;
+}
+#button:hover{
+    transform: scale(1.1);
+}
+/* title of program */
+#title{
+    color:  #484848;
+    border-bottom: solid 0.5px rgba(72, 72,72, 0.9);
+    padding-left: 16px;
+    margin-bottom: 20px;
+}
+#title h4{
+    font-size: 25px;
+    font-weight: 400;
+    display: inline-block;
+}
+#title a{
+    font-size: 16px;
+    margin-left: 3px;
+}
+.fa-question-circle-o{
+    color: #484848;
+}
+.fa-question-circle-o:hover{
+    transform: scale(1.1);
+    color: #4baeda;
+}
+/* sidebar */
+.sidenav{
+    min-height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #4baeda;
+    overflow-x: hidden;
+    padding-top: 50px;
+    transition: 0.6s;
+}
+/* link in sidebar */
+.sidenav a, #menus a{
+    padding: 2px 2px 2px 8px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #f1f1f1;
+    display: block;
+    transition: 0.3s;
+}
+#menus a{
+    padding: 20px 10px 13px 10px;
+    font-size: 15px;
+    display: inline-block;
+    font-weight: 600;
+}
+#menus{
+    position: absolute;
+    right: 2%;
+    margin-top: -5px;
+}
+#subs{
+    background-color: #4baeda;
+    border: none;
+    margin-top: -2px;
+    margin-left: 30px;
+}
+#subs a{
+    display: block;
+    padding: 2px 0px 2px 0px;
+    text-align: center;
+}
+#subs a:hover{
+    background-color: rgb(43, 43, 43);
+    font-size: 15.5px;
+}
+.sidenav a:hover, .sidenav a:active, #menus a:hover, #menus a:active{
+    color: white;
+    text-decoration: none;
+}
+#menus a:hover{
+    background-color: rgb(43, 43, 43);
+}
+/* button to close sidebar */
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    height: 30px;
+    width: 30px;
+}
+/* features menu */
+#item{
+    cursor: pointer;
+}
+/* submenu of features. displayed as dropdown list */
+#submenu{
+    display: none;
+}
+.form-group, #desc{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+/* will show up when wrong input occurs */
+#add{
+    font-size: 12px;
+    display: block;
+}
+#error{
+    color: red;
+    font-size: 12px;
+    display: none;
+}
+#output{
+    background: white;
+    cursor: text;
+    margin-bottom: 18px;
+}
+/* button to delete input instantly */
+.fa-trash{
+    position: absolute;
+    right: 5%;
+    cursor: pointer;
+}
+.fa-trash:hover{
+    color: #4baeda;
+    transform: scale(1.1);
+}
+/* description */
+#desc{
+    margin-top: 30px;
+}
+.also{
+    text-align: right;
+    font-size: 12px;
+}
+#direct{
+    color:  #484848;
+    text-decoration: none;
+}
+#direct:hover{
+    text-decoration: underline;
+}
+/* social media icons container */
+.sosial{
+    position: relative;
+    width: 100vw;
+    text-align: center;
+}
+/* social media buttons */
+.btn{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #f1f1f1;
+    margin: 5px;
+    margin-top: 8px;
+    box-shadow: 0 5px 15px -5px #00000070;
+    color: #39acd6;
+    overflow: hidden;
+    position: relative;
+}
+/* The border-radius wasn't working when it's placed in .btn */
+#gog, #fac, #lin, #git{
+    border-radius: 50%;
+}
+/* social media icon */
+.btn i{
+    line-height: 27px;
+    font-size: 20px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: 0.2s linear;
+}
+.fa-facebook{
+    margin-right: 9px;
+    margin-top: 1px;
+}
+.btn:hover i{
+    transform: scale(1.12);
+    color: #f1f1f1;
+    transform: translateX(-50%);
+}
+.btn:hover{
+    transform: scale(1.05);
+    box-shadow: none;
+    border-color: transparent;
+}
+.btn::before{
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background: #4baeda;
+    transform: rotate(45deg);
+    left: -110%;
+    top: 90%;
+}
+.btn:hover::before{
+    animation: aaa 0.9s 1;
+    top: -10%;
+    left: -10%;
+}
+@keyframes aaa{
+    0%{
+        left: -110%;
+        top: -90%;
+    }50%{
+        left: 10%;
+        top: -30%;
+    }100%{
+        left: -10%;
+        top: -10%;
+    }
+}
+/* footer container */
+#about{
+    width: 100vw;
+    background: #4baeda;
+    box-shadow: 0 -1px 12px 0 #00000070;
+    margin-top: 25px;
+    position: relative;
+    bottom: 0;
+}
+#about h4{
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+}
+footer{
+    color: white;
+    font-size: 13px;
+    text-align: center;
+    padding: 5px;
+}
+ /* berubah */
+@media screen and (max-width:500px){
+    .sidenav a:hover, .sidenav a:active, #menus a:hover, #menus a:active{
+        transform: scale(1.05);
+    }
+}
+@media screen and (min-width:501px){
+    #basic, .sidenav{
+        background-color: #444545;
+    }
+    .fa-question-circle-o:hover,  .fa-trash:hover, .btn{
+        color: #444545;
+    }
+    /* berubah */
+    .btn::before, #about, #subs{
+        background: #444545;
+    }
+}
+@media screen and (min-width:768px) and (min-height:1024px) and (max-width:1024px) and (max-width:1366px){
+    #about{
+        position: absolute;
+        bottom: 0;
+    }
+}
+/* berubah */
+@media screen and (max-width:800px){
+    #menus{
+        display: none;
+    }
+}
+@media screen and (min-width:801px){
+    .form-group, #desc, hr{
+        width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .fa-trash{
+        position: relative;
+        left: 93%;
+    }
+    /* berubah */
+    #menus{
+        display: inline-block;
+    }
+    #button{
+        display: none;
+    }
+}

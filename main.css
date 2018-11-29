@@ -1,0 +1,240 @@
+html, body, main{
+    width: 100vw;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: Ubuntu;
+    position: absolute;
+    overflow-x: hidden;
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+    scroll-behavior: smooth;
+    overflow-y: scroll;
+}
+#isi{
+    position: relative;
+    top: 30%;
+    transform: translateY(-30%);
+}
+#intro{
+    height: 100vh;
+    background-image: url("komputer.jpg");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    box-shadow: 0px 2px 15px 0 #00000070;
+}
+#logo{
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    margin-left: 30px;
+    margin-top: 30px;
+}
+#title1{
+    color: white;
+    font-weight: 600;
+    font-family: Ubuntu;
+    text-transform: uppercase;
+    text-align: center;
+}
+.nama{
+    opacity: 0.65;
+    font-size: 16px;
+    margin-bottom: -20px;
+    letter-spacing: 0.2em;
+}
+.desc{
+    opacity: 1;
+    text-transform: none;
+    font-size: 24px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: 600;
+    line-height: 1.5;
+}
+#link{
+    position: relative;
+}
+#link a{
+    text-decoration: none;
+    color: white;
+    font-family: Ubuntu;
+    font-weight: 600;
+    background-color: transparent;
+    border: solid 1.5px white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 10px;
+    text-align: center;
+    display: block;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.9s ease;
+    transition-property: color, background;
+}
+#link a:hover{
+    color: black;
+    font-size: 17px;
+}
+#feature{
+    min-height: 29vw;
+    width: 100vw;
+    background-image: url("nices.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+}
+.ini{
+    position: relative;
+    top: -10%;
+    transform: translateY(10%);
+}
+#feature h1{
+    text-align: center;
+    font-size: 40px;
+}
+.fitur a{
+    text-decoration: none;
+    color: black;
+    background: transparent;
+    border: solid 1.5px black;
+    padding: 10px;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 18px; 
+    display: block;
+    box-shadow: -1px 2px 4px 0 rgba(178, 187, 190, 1);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.9s ease;
+    transition-property: color, background;
+}
+.fitur a:hover{
+    background: rgba(34, 34, 34, 0.9);
+    color: white;
+    border-width: 0.75px;
+    box-shadow: -2.5px 5px 10px 0 rgba(178, 187, 190, 1);
+    transform: translate3d(-2px,-4px,-2px);
+}
+.fitur a::before{
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 0%;
+    background: rgba(34, 34, 34, 0.9);
+    z-index: -1;
+    transition: 0.8s;
+    border-radius: 50% 50% 0 0;
+}
+#link a::before{
+    content: "";
+    position: absolute;
+    background: white;
+    z-index: -1;
+    transition: 0.8s;
+    width: 100%;
+    height: 0;
+    opacity: 0.7;
+    transform: translate(-16%, -50%) rotate(45deg);
+}
+#link a:hover::before{
+    height: 400%;
+    opacity: 1;
+}
+.fitur a:hover::before{
+    height: 180%;
+    opacity: 0.5;
+}
+#feature{
+    width: 100vw;
+}
+.sosial{
+    position: relative;
+    width: 100vw;
+    text-align: center;
+}
+.btn{
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    background: #f1f1f1;
+    margin: 5px;
+    margin-top: 8px;
+    border-radius: 50%;
+    box-shadow: 0 5px 15px -5px #00000070;
+    color: #39acd6;
+    overflow: hidden;
+    position: relative;
+}
+.btn i{
+    line-height: 42px;
+    font-size: 20px;
+    transition: 0.2s linear;
+}
+.btn:hover i{
+    transform: scale(1.12);
+    color: #f1f1f1;
+}
+.btn:hover{
+    transform: scale(1.02);
+    box-shadow: none;
+    border: solid white 0.7px;
+}
+.btn::before{
+    content: "";
+    position: absolute;
+    width: 120%;
+    height: 120%;
+    background: #4baeda;
+    transform: rotate(45deg);
+    left: -110%;
+    top: 90%;
+}
+.btn:hover::before{
+    animation: aaa 0.9s 1;
+    top: -10%;
+    left: -10%;
+}
+@keyframes aaa{
+    0%{
+        left: -110%;
+        top: -90%;
+    }50%{
+        left: 10%;
+        top: -30%;
+    }100%{
+        left: -10%;
+        top: -10%;
+    }
+}
+#about{
+    width: 100vw;
+    background: #39acd6;
+    z-index: 2;
+    box-shadow: 0 -1px 12px 0 #00000070;;
+}
+#about h4{
+    text-align: center;
+    padding: 10px;
+    margin: auto;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    color: white;
+    font-weight: 500;
+    font-size: 15px;
+}
+footer{
+    color: white;
+    font-size: 13px;
+    text-align: center;
+    padding-bottom: 5px;
+}
