@@ -83,8 +83,9 @@
             <div class="form-group">
                 <label for="base">Base</label>
                 <span><i class="fa fa-trash" id="bom" onclick="deleteBase()"></i></span>
-                <input id="base" class="form-control" type="number" placeholder="Input any base from 2-36" onkeyup="convert()">
+                <input id="base" class="form-control" type="text" placeholder="Input any base from 2-36" onkeyup="convert(); hasNo();">
                 <span id="error2">The base should be within the range of 2-36.</span>
+                <span id="error3">The input must contain integers only.</span>
             </div>
             <div class="form-group">
                 <label for="output">Output</label>
@@ -142,6 +143,7 @@
         var error1 = document.getElementById("error1");
         var output = document.getElementById("output");
         var error2 = document.getElementById("error2");
+        var error3 = document.getElementById("error3");
         var base = document.getElementById("base");
 
         function isEmpty(input){
@@ -150,6 +152,19 @@
 
         function hasNonNumber(input){
             return /[^0-9]/.test(input);
+        }
+        function hasNo(){
+            if(hasNonNumber(base.value)){
+                base.style.borderColor="red";
+                base.style.borderWidth="2px";
+                error3.style.display="inline";
+                output.value="Invalid input";
+            }
+            else{
+                base.style.borderColor="#cccccc";
+                error3.style.display="none";
+                base.style.borderWidth="1px";
+            }
         }
         function contain(){
             if(hasNonNumber(dec.value)){
@@ -204,7 +219,7 @@
             }
             else{
                 output.value="Invalid input";
-                error2.style.display="inline";
+                error2.style.display="block";
                 base.style.borderColor="red";
                 base.style.borderWidth="2px";
             }
