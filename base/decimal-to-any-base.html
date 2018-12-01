@@ -190,6 +190,7 @@
         function deleteBase(){
             base.value="";
             error2.style.display="none";
+            error3.style.display="none";
             base.style.borderColor="#cccccc";
             output.value="";
             base.style.borderWidth="1px";
@@ -211,11 +212,14 @@
                 base.style.borderColor="#cccccc";
                 base.style.borderWidth="1px";
             }
-            else if(isEmpty(base.value)){
+            else if(isEmpty(baseo)){
                 output.value="";
                 error2.style.display="none";
                 base.style.borderColor="#cccccc";
                 base.style.borderWidth="1px";
+            }
+            else if(hasNonNumber(baseo)){
+                error2.style.display="none";
             }
             else{
                 output.value="Invalid input";
