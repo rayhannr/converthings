@@ -166,6 +166,9 @@ main{
 #desc{
     margin-top: 30px;
 }
+#desc h4{
+    font-weight : 600;
+}
 #output{
     margin-bottom: 30px;
 }
